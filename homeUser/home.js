@@ -8,6 +8,7 @@ const sectionDepositos = document.getElementById("depositos");
 const montoDeposito = document.querySelector("#montoDeposito");
 const sectionTransferencias = document.getElementById("transferencias");
 const sectionServicios = document.querySelector("#servicios");
+const selectContainer = document.querySelector(".selectContainer");
 //Arrays con datos de usuarios
 let baseDeDatos = [];
 let usuarioLogueado = [];
@@ -82,7 +83,12 @@ depositarCash.addEventListener("click", () => {
   pintarDatos();
 });
 //Seccion transferencias
-transferenciasBTN.addEventListener("click", (e) => {
-  e.preventDefault();
+transferenciasBTN.addEventListener("click", () => {
   sectionTransferencias.classList.toggle("show");
+  //   alert("funciona");
+});
+
+//Seccion servicios
+serviciosBTN.addEventListener("click", () => {
+  sectionServicios.classList.toggle("show");
 });

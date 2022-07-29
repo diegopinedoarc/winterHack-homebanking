@@ -183,8 +183,9 @@ html {
     text-align: center;
   }
   .show {
-    display: flex;
+    display: block;
   }
+
   .textoDatos {
     text-align: center;
     font-size: 1.2rem;
@@ -193,7 +194,7 @@ html {
 
   /* Seccion transferencias */
   .transferencias {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -210,5 +211,8 @@ html {
     position: absolute;
     top: 13rem;
     left: 25rem;
+  }
+  .servicios {
+    display: none;
   }
 }
