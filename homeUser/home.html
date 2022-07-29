@@ -17,6 +17,10 @@
   </head>
   <body>
     <hero class="hero">
+      <div class="deslog">
+        <h4>Salir</h4>
+        <p><i class="fa-solid fa-arrow-right-from-bracket"></i></p>
+      </div>
       <div class="logoName">
         <div class="boxhero">
           <div class="boxlogo">
@@ -37,11 +41,6 @@
       </div>
     </hero>
     <main class="main">
-      <div class="deslog">
-        <h4>Salir</h4>
-        <p><i class="fa-solid fa-arrow-right-from-bracket"></i></p>
-      </div>
-
       <div class="btnContainer">
         <button id="serviciosBTN" class="btnsLanding">Servicios</button>
         <button id="depositosBTN" class="btnsLanding">Depósitos</button>
@@ -49,6 +48,8 @@
           Transferencias
         </button>
       </div>
+    </main>
+    <section class="oculto">
       <section id="depositos" class="depositos">
         <div class="depoContainer">
           <form id="formDeposito">
@@ -67,7 +68,7 @@
       </section>
       <section id="servicios"></section>
       <section id="transferencias"></section>
-    </main>
+    </section>
 
     <script src="./home.js" type="module"></script>
   </body>
