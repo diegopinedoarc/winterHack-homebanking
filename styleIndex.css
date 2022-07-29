@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  background: url(./imagenes/MainBackground.jpg) no-repeat;
+  background-size: cover;
+  font-family: var(--font1);
+}
+
+:root {
+  /* colores */
+  --bordo: rgb(37, 29, 58);
+  --violeta: rgb(42, 37, 80);
+  --naranja: rgb(224, 77, 1);
+  --naranjaClaro: rgb(255, 119, 0);
+  --piel: rgb(236, 153, 75);
+  --blanco: rgb(241, 238, 233);
+  /* fuentes */
+  --font1: "Roboto Condensed", sans-serif;
+}
+
+@media (min-width: 450px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .header {
+    background: rgba(50, 3, 104, 0.8);
+    color: var(--blanco);
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 2px 2px 2px 1px black;
+    transition: top 0.5s;
+  }
+  .menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .item:hover a {
+    color: rgb(255, 119, 0.6);
+  }
+  .btn__container {
+    display: none;
+  }
+  .containerItems {
+    display: flex;
+    gap: 2rem;
+  }
+  .show {
+    display: flex;
+  }
+  .linkNav {
+    text-decoration: none;
+    color: var(--blanco);
+    font-size: 1.2rem;
+  }
+  .logoName {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1.8rem;
+  }
+  .logo {
+    width: 4.5rem;
+    border-radius: 0.8rem;
+  }
+  .hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 4.5rem;
+    background: rgba(50, 3, 104, 0.8);
+    box-shadow: 2px 2px 2px 1px black;
+    width: 70%;
+    height: 22rem;
+    border-radius: 2rem;
+  }
+  .heroIMG {
+    width: 40%;
+    border-radius: 1.5rem;
+    box-shadow: 2px 2px 2px 1px black;
+  }
+  .infoHero {
+    width: 40%;
+    font-size: 2.8rem;
+    color: var(--blanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .btnHero {
+    width: 16rem;
+    height: 2.5rem;
+    background: rgba(250, 250, 250, 0.8);
+    color: rgba(50, 3, 104, 0.8);
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0.8px 0.8px 0.8px 0.8px black;
+  }
+  .btnHero:hover {
+    color: rgba(250, 250, 250, 0.8);
+    background: rgb(255, 119, 0.6);
+    box-shadow: 0.8px 0.8px 0.8px 0.8px black;
+  }
+}

@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  background: url(../imagenes/MainBackground.jpg) no-repeat;
+  background-size: cover;
+  font-family: var(--font1);
+}
+
+:root {
+  /* colores */
+  --bordo: rgb(37, 29, 58);
+  --violeta: rgb(42, 37, 80);
+  --naranja: rgb(224, 77, 1);
+  --naranjaClaro: rgb(255, 119, 0);
+  --piel: rgb(236, 153, 75);
+  --blanco: rgb(241, 238, 233);
+  /* fuentes */
+  --font1: "Roboto Condensed", sans-serif;
+}
+
+@media (min-width: 450px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    width: 18rem;
+    background: rgba(50, 3, 104, 0.8);
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    font-size: 1.8rem;
+    color: var(--blanco);
+  }
+  .logoName {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1.8rem;
+  }
+  .logo {
+    width: 4.5rem;
+    border-radius: 0.8rem;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .btnContainer {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 36rem;
+    gap: 1rem;
+    background: rgba(50, 3, 104, 0.8);
+    height: 10rem;
+    border-radius: 0.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 2px 2px 2px 1px black;
+  }
+  .btnsLanding {
+    width: 16rem;
+    height: 2.5rem;
+    background: rgba(250, 250, 250, 0.8);
+    color: rgba(50, 3, 104, 0.8);
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .datos {
+    width: 18rem;
+    height: 6rem;
+    border-radius: 0.5rem;
+    background: rgba(50, 3, 104, 0.9);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgba(250, 250, 250, 0.8);
+    box-shadow: 2px 2px 2px 1px black;
+  }
+  .deslog {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: rgba(50, 3, 104, 0.8);
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: relative;
+    top: -9rem;
+    left: 20rem;
+    cursor: pointer;
+  }
+  .cuenta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .depositos {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(50, 3, 104, 0.8);
+    width: 36rem;
+    border-radius: 0.5rem;
+    margin-bottom: 3rem;
+    color: rgba(250, 250, 250, 0.8);
+    height: 8rem;
+    box-shadow: 2px 2px 2px 1px black;
+  }
+  .depoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #formDeposito {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  #montoDeposito {
+    width: 16rem;
+    height: 1.5rem;
+    border-radius: 0.5rem;
+  }
+  #motivoDeposito {
+    width: 16rem;
+    height: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+  }
+  .showDepositos {
+    display: flex;
+  }
+}

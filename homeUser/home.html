@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styleHome.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+    />
+    <title>U-Bank</title>
+  </head>
+  <body>
+    <hero class="hero">
+      <div class="logoName">
+        <img class="logo" src="../imagenes/logoChico.png" alt="insertlogo" />
+        <h1>U-Bank</h1>
+      </div>
+      <h2>¡Bienvenido!</h2>
+    </hero>
+    <main class="main">
+      <div class="deslog">
+        <h4>Salir</h4>
+        <p><i class="fa-solid fa-arrow-right-from-bracket"></i></p>
+      </div>
+      <div class="cuenta">
+        <div class="datos"></div>
+      </div>
+
+      <div class="btnContainer">
+        <button id="serviciosBTN" class="btnsLanding">Servicios</button>
+        <button id="depositosBTN" class="btnsLanding">Depósitos</button>
+        <button id="transferenciasBTN" class="btnsLanding">
+          Transferencias
+        </button>
+      </div>
+      <section id="depositos" class="depositos">
+        <div class="depoContainer">
+          <form id="formDeposito">
+            <div class="CBU"></div>
+            <label for="montoDeposito">Monto</label>
+            <input type="text" name="" id="montoDeposito" />
+            <button id="depositarCash">Depositar</button>
+            <label for="motivoDeposito">Motivo</label>
+            <select name="motivo" id="motivoDeposito">
+              <option value="" selected="selected">- Selecciona -</option>
+              <option value="pago">Pago</option>
+              <option value="prestamo">Préstamo</option>
+            </select>
+          </form>
+        </div>
+      </section>
+      <section id="servicios"></section>
+      <section id="transferencias"></section>
+    </main>
+
+    <script src="./home.js" type="module"></script>
+  </body>
+</html>
