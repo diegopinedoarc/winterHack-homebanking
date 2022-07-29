@@ -6,12 +6,10 @@ let baseDeDatos = [];
 let usuario = emailLogin.value;
 //funcion para descargar la base de datos
 function descargaBaseDeDatos() {
-  debugger;
   baseDeDatos = JSON.parse(localStorage.getItem("baseDeDatos"));
 }
 //Evento al enviar el login
 formLogin.addEventListener("submit", (e) => {
-  debugger;
   e.preventDefault();
   if (localStorage.getItem("baseDeDatos")) {
     descargaBaseDeDatos();
@@ -30,7 +28,6 @@ formLogin.addEventListener("submit", (e) => {
 });
 
 function checkDatos() {
-  debugger;
   let entrar = false;
   for (let i in baseDeDatos) {
     if (baseDeDatos[i].email === emailLogin.value) {
@@ -43,11 +40,9 @@ function checkDatos() {
 }
 
 function alHome() {
-  debugger;
   location.assign("../homeUser/home.html");
 }
 function setCookie(cname, cvalue, exdays) {
-  debugger;
   var d = new Date();
   d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
   var expires = "expires=" + d.toUTCString();
