@@ -14,7 +14,6 @@ let usuarioLogueado = [];
 //Traigo la cookie del login y la guardo en una variable
 let user = getCookie(`usuario`);
 function getCookie(cname) {
-  debugger;
   var name = cname + "=";
   var ca = document.cookie.split(";");
   for (var i = 0; i < ca.length; i++) {
@@ -44,6 +43,9 @@ function pintarDatos() {
   h2.innerHTML = `¡Hola! ${usuarioLogueado.nombre} ${usuarioLogueado.apellido}`;
   h3.innerHTML = `Tu CBU es: ${usuarioLogueado.CBU}`;
   p.innerHTML = `Tu saldo en cuenta es: $${usuarioLogueado.saldo}`;
+  h3.classList.add("textoDatos");
+  h2.classList.add("textoDatos");
+  p.classList.add("textoDatos");
   datos.appendChild(h2);
   datos.appendChild(h3);
   datos.appendChild(p);
@@ -66,7 +68,7 @@ function alLogin() {
 //Seccion depositos
 depositosBTN.addEventListener("click", (e) => {
   e.preventDefault();
-  sectionDepositos.classList.toggle("showDepositos");
+  sectionDepositos.classList.toggle("show");
 });
 depositarCash.addEventListener("click", () => {
   usuarioLogueado.saldo += parseInt(montoDeposito.value);
@@ -74,3 +76,7 @@ depositarCash.addEventListener("click", () => {
   pintarDatos();
 });
 //Seccion transferencias
+transferenciasBTN.addEventListener("click", (e) => {
+  e.preventDefault();
+  sectionTransferencias.classList.toggle("show");
+});

@@ -31,15 +31,28 @@ html {
   }
   .hero {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-top: 5rem;
-    width: 18rem;
+    justify-content: space-around;
+    margin-top: 2rem;
+    width: 100%;
     background: rgba(50, 3, 104, 0.8);
     padding: 0.5rem;
     border-radius: 0.8rem;
     font-size: 1.8rem;
     color: var(--blanco);
+    box-shadow: 2px 2px 2px 1px black;
+  }
+  .boxHero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .boxlogo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.5rem;
   }
   .logoName {
     display: flex;
@@ -58,7 +71,7 @@ html {
     align-items: center;
   }
   .btnContainer {
-    margin-top: 2.5rem;
+    margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -68,7 +81,7 @@ html {
     background: rgba(50, 3, 104, 0.8);
     height: 10rem;
     border-radius: 0.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     box-shadow: 2px 2px 2px 1px black;
   }
   .btnsLanding {
@@ -83,10 +96,10 @@ html {
     font-weight: bold;
   }
   .datos {
-    width: 18rem;
-    height: 6rem;
+    width: 40rem;
+    height: 5rem;
     border-radius: 0.5rem;
-    background: rgba(50, 3, 104, 0.9);
+    /* background: rgba(50, 3, 104, 0.9); */
     margin-top: 2rem;
     margin-bottom: 2rem;
     display: flex;
@@ -95,11 +108,12 @@ html {
     text-align: center;
     color: rgba(250, 250, 250, 0.8);
     box-shadow: 2px 2px 2px 1px black;
+    gap: 1rem;
   }
   .deslog {
     width: 3.5rem;
     height: 3.5rem;
-    background: rgba(50, 3, 104, 0.8);
+    /* background: rgba(50, 3, 104, 0.8); */
     color: aliceblue;
     display: flex;
     flex-direction: column;
@@ -107,9 +121,10 @@ html {
     align-items: center;
     border-radius: 50%;
     position: relative;
-    top: -9rem;
-    left: 20rem;
+    top: -7rem;
+    left: 38rem;
     cursor: pointer;
+    box-shadow: 2px 2px 2px 1px black;
   }
   .cuenta {
     display: flex;
@@ -128,6 +143,8 @@ html {
     color: rgba(250, 250, 250, 0.8);
     height: 8rem;
     box-shadow: 2px 2px 2px 1px black;
+    height: auto;
+    padding: 1rem;
   }
   .depoContainer {
     display: flex;
@@ -153,7 +170,12 @@ html {
     border-radius: 0.5rem;
     text-align: center;
   }
-  .showDepositos {
+  .show {
     display: flex;
+  }
+  .textoDatos {
+    text-align: center;
+    font-size: 1.2rem;
+    width: 110%;
   }
 }
