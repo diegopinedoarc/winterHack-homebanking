@@ -6,7 +6,7 @@ const serviciosBTN = document.querySelector("#serviciosBTN");
 const transferenciasBTN = document.querySelector("#transferenciasBTN");
 const sectionDepositos = document.getElementById("depositos");
 const montoDeposito = document.querySelector("#montoDeposito");
-const sectionTransferencias = document.querySelector("#transferencias");
+const sectionTransferencias = document.getElementById("transferencias");
 const sectionServicios = document.querySelector("#servicios");
 //Arrays con datos de usuarios
 let baseDeDatos = [];
@@ -54,6 +54,12 @@ function pintarDatos() {
 deslogBTN.addEventListener("click", desloguear);
 //Funcion pora eliminar la cookie que trae al usuario y sus datos, y luego redirecciona al login
 function desloguear() {
+  for (let i in baseDeDatos) {
+    if (baseDeDatos[i].email === usuarioLogueado.email) {
+      baseDeDatos[i].saldo = usuarioLogueado.saldo;
+      localStorage.setItem("baseDeDatos", JSON.stringify(baseDeDatos));
+    }
+  }
   eliminarCookie(`usuario`);
   alLogin();
 }

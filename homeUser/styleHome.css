@@ -137,6 +137,7 @@ html {
     align-items: center;
     justify-content: center;
   }
+  /* Seccion Depositos */
   .depositos {
     display: none;
     flex-direction: column;
@@ -188,5 +189,26 @@ html {
     text-align: center;
     font-size: 1.2rem;
     width: 110%;
+  }
+
+  /* Seccion transferencias */
+  .transferencias {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(50, 3, 104, 0.8);
+    width: 46rem;
+    border-radius: 0.5rem;
+    margin-bottom: 3rem;
+    color: rgba(250, 250, 250, 0.8);
+    height: 8rem;
+    box-shadow: 2px 2px 2px 1px black;
+    height: auto;
+    padding: 1rem;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 13rem;
+    left: 25rem;
   }
 }
