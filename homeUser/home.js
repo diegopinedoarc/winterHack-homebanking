@@ -10,6 +10,15 @@ const montoDeposito = document.querySelector("#montoDeposito");
 //servicios
 const serviciosBTN = document.querySelector("#serviciosBTN");
 const sectionServicios = document.querySelector("#servicios");
+const AdherirBTN = document.querySelector("#AdherirBTN");
+const sacarBTN = document.querySelector("#sacarBTN");
+const pagarBTN = document.querySelector("#pagarBTN");
+const comprobantesBTN = document.querySelector("#comprobantesBTN");
+const addServSection = document.querySelector("#addServ");
+const sacarServSection = document.querySelector("#sacarServ");
+const pagarServSection = document.querySelector("#pagarServ");
+const comprobanteServSection = document.querySelector("#comprobantesServ");
+
 //transferencias
 const transferenciasBTN = document.querySelector("#transferenciasBTN");
 const sectionTransferencias = document.getElementById("transferencias");
@@ -152,4 +161,34 @@ serviciosBTN.addEventListener("click", (e) => {
   sectionServicios.classList.toggle("show");
   sectionDepositos.classList.remove("show");
   sectionTransferencias.classList.remove("show");
+});
+
+AdherirBTN.addEventListener("click", (e) => {
+  e.preventDefault();
+  addServSection.classList.toggle("show");
+  sacarServSection.classList.remove("show");
+  pagarServSection.classList.remove("show");
+  comprobanteServSection.classList.remove("show");
+});
+sacarBTN.addEventListener("click", (e) => {
+  e.preventDefault();
+  sacarServSection.classList.toggle("show");
+  addServSection.classList.remove("show");
+  pagarServSection.classList.remove("show");
+  comprobanteServSection.classList.remove("show");
+});
+
+pagarBTN.addEventListener("click", (e) => {
+  e.preventDefault();
+  pagarServSection.classList.toggle("show");
+  sacarServSection.classList.remove("show");
+  comprobanteServSection.classList.remove("show");
+  addServSection.classList.remove("show");
+});
+
+comprobantesBTN.addEventListener("click", (e) => {
+  comprobanteServSection.classList.toggle("show");
+  sacarServSection.classList.remove("show");
+  addServSection.classList.remove("show");
+  pagarServSection.classList.remove("show");
 });

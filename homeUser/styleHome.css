@@ -258,6 +258,51 @@ html {
     text-align: center;
     padding: 0.5rem;
   }
+
+  .btnsServicios {
+    width: 12rem;
+    height: 2.5rem;
+    background: rgba(250, 250, 250, 0.8);
+    color: rgba(50, 3, 104, 0.8);
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px 1px black;
+    padding: 0.5rem;
+  }
+  .btnsServicios:hover {
+    color: rgba(250, 250, 250, 0.8);
+    background: rgb(255, 119, 0.6);
+    box-shadow: 0.8px 0.8px 0.8px 0.8px black;
+  }
+  .botoneraServicios {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .servicioOculto {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(50, 3, 104, 0.8);
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 3rem;
+    color: rgba(250, 250, 250, 0.8);
+    height: 8rem;
+    box-shadow: 2px 2px 2px 1px black;
+    height: auto;
+    padding: 1rem;
+    position: absolute;
+    top: 9rem;
+    left: 0rem;
+    font-size: 1.5rem;
+  }
   .show {
     display: flex;
   }
