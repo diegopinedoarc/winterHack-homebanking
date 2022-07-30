@@ -115,4 +115,12 @@ html {
     background: rgb(255, 119, 0.6);
     box-shadow: 0.8px 0.8px 0.8px 0.8px black;
   }
+  .errores {
+    background: var(--naranjaClaro);
+    color: var(--blanco);
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
 }

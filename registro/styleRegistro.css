@@ -138,4 +138,13 @@ html {
     text-align: center;
     font-size: 0.9rem;
   }
+
+  .errores {
+    background: var(--naranjaClaro);
+    color: var(--blanco);
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
 }

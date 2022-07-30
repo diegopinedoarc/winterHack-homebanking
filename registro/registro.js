@@ -44,7 +44,7 @@ formRegistro.addEventListener("submit", (e) => {
 
   //Si alguna de las condiciones de arriba se activa se dispara el if, pintando el error correspondiente
   if (enviar) {
-    parrafo.classList.add("labels");
+    parrafo.classList.add("errores");
     parrafo.innerHTML = error;
   } else {
     //Si se cumple todos los parametros del formulario corre el codigo que almacena los datos en el local sotrage y la base de datos, y luego nos redirecciona al login
@@ -99,7 +99,7 @@ function buscarBaseDatos() {
     }
     if (!noEsta) {
       parrafo.innerHTML = `El email ya esta registrado`;
-      parrafo.classList.add("labels");
+      parrafo.classList.add("errores");
       enviar = true;
     }
   }

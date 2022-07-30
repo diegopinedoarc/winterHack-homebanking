@@ -116,24 +116,14 @@ transferenciasBTN.addEventListener("click", (e) => {
   sectionServicios.classList.remove("show");
 });
 
-//Seccion servicios
-serviciosBTN.addEventListener("click", (e) => {
-  e.preventDefault();
-  sectionServicios.classList.toggle("show");
-  sectionDepositos.classList.remove("show");
-  sectionTransferencias.classList.remove("show");
-});
-
 transferirBTN.addEventListener("click", (e) => {
   e.preventDefault();
   transferir();
 });
 function transferir() {
-  debugger;
   let monto = montoTransferido.value;
   let usuarioRecibe = usuarioRecibeTransf.value;
   function restarSaldo() {
-    debugger;
     usuarioLogueado.saldo -= parseInt(monto);
     localStorage.setItem(user, JSON.stringify(usuarioLogueado));
     datos.innerHTML = "";
@@ -144,7 +134,6 @@ function transferir() {
     baseDeDatos.some((usuario) => usuario.email == usuarioRecibeTransf.value)
   ) {
     baseDeDatos.forEach((usuario) => {
-      debugger;
       let monto = montoTransferido.value;
       if (usuario.email === usuarioRecibeTransf.value) {
         restarSaldo();
@@ -153,4 +142,14 @@ function transferir() {
       }
     });
   }
+  montoTransferido.value = "";
+  usuarioRecibeTransf.value = "";
 }
+
+//Seccion servicios
+serviciosBTN.addEventListener("click", (e) => {
+  e.preventDefault();
+  sectionServicios.classList.toggle("show");
+  sectionDepositos.classList.remove("show");
+  sectionTransferencias.classList.remove("show");
+});
