@@ -1,14 +1,22 @@
+//desloguear
 const deslogBTN = document.querySelector(".deslog");
+//log
 const datos = document.querySelector(".datos");
+//depositos
 const depositosBTN = document.querySelector("#depositosBTN");
 const depositarCash = document.querySelector("#depositarCash");
-const serviciosBTN = document.querySelector("#serviciosBTN");
-const transferenciasBTN = document.querySelector("#transferenciasBTN");
 const sectionDepositos = document.getElementById("depositos");
 const montoDeposito = document.querySelector("#montoDeposito");
-const sectionTransferencias = document.getElementById("transferencias");
+//servicios
+const serviciosBTN = document.querySelector("#serviciosBTN");
 const sectionServicios = document.querySelector("#servicios");
-const selectContainer = document.querySelector(".selectContainer");
+//transferencias
+const transferenciasBTN = document.querySelector("#transferenciasBTN");
+const sectionTransferencias = document.getElementById("transferencias");
+const montoTransferido = document.querySelector("#montoTransferencia");
+const usuarioRecibeTransf = document.querySelector("#usuarioRecibeTransf");
+const transferirBTN = document.querySelector("#transferir");
+
 //Arrays con datos de usuarios
 let baseDeDatos = [];
 let usuarioLogueado = [];
@@ -34,6 +42,14 @@ function descargarDatos() {
   if (localStorage.getItem(user)) {
     usuarioLogueado = JSON.parse(localStorage.getItem(user));
   }
+  for (let i in baseDeDatos) {
+    if (baseDeDatos[i].email === usuarioLogueado.email) {
+      let refrescar = baseDeDatos[i].saldo;
+      usuarioLogueado.saldo = refrescar;
+      localStorage.setItem(user, JSON.stringify(usuarioLogueado));
+    }
+  }
+
   pintarDatos();
 }
 //Funcion parap intar los datos del usuario
@@ -76,19 +92,65 @@ function alLogin() {
 depositosBTN.addEventListener("click", (e) => {
   e.preventDefault();
   sectionDepositos.classList.toggle("show");
+  sectionServicios.classList.remove("show");
+  sectionTransferencias.classList.remove("show");
 });
-depositarCash.addEventListener("click", () => {
+depositarCash.addEventListener("click", (e) => {
+  e.preventDefault();
   usuarioLogueado.saldo += parseInt(montoDeposito.value);
   localStorage.setItem(user, JSON.stringify(usuarioLogueado));
+  for (let i in baseDeDatos) {
+    if (baseDeDatos[i].email === usuarioLogueado.email) {
+      baseDeDatos[i].saldo = usuarioLogueado.saldo;
+      localStorage.setItem("baseDeDatos", JSON.stringify(baseDeDatos));
+    }
+  }
+  datos.innerHTML = "";
   pintarDatos();
 });
 //Seccion transferencias
-transferenciasBTN.addEventListener("click", () => {
+transferenciasBTN.addEventListener("click", (e) => {
+  e.preventDefault();
   sectionTransferencias.classList.toggle("show");
-  //   alert("funciona");
+  sectionDepositos.classList.remove("show");
+  sectionServicios.classList.remove("show");
 });
 
 //Seccion servicios
-serviciosBTN.addEventListener("click", () => {
+serviciosBTN.addEventListener("click", (e) => {
+  e.preventDefault();
   sectionServicios.classList.toggle("show");
+  sectionDepositos.classList.remove("show");
+  sectionTransferencias.classList.remove("show");
 });
+
+transferirBTN.addEventListener("click", (e) => {
+  e.preventDefault();
+  transferir();
+});
+function transferir() {
+  debugger;
+  let monto = montoTransferido.value;
+  let usuarioRecibe = usuarioRecibeTransf.value;
+  function restarSaldo() {
+    debugger;
+    usuarioLogueado.saldo -= parseInt(monto);
+    localStorage.setItem(user, JSON.stringify(usuarioLogueado));
+    datos.innerHTML = "";
+    pintarDatos();
+  }
+
+  if (
+    baseDeDatos.some((usuario) => usuario.email == usuarioRecibeTransf.value)
+  ) {
+    baseDeDatos.forEach((usuario) => {
+      debugger;
+      let monto = montoTransferido.value;
+      if (usuario.email === usuarioRecibeTransf.value) {
+        restarSaldo();
+        usuario.saldo += parseInt(monto);
+        localStorage.setItem("baseDeDatos", JSON.stringify(baseDeDatos));
+      }
+    });
+  }
+}
