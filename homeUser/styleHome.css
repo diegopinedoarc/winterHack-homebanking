@@ -286,8 +286,8 @@ html {
   }
   .servicioOculto {
     display: none;
-    flex-direction: column;
-    justify-content: center;
+    /* flex-direction: column; */
+    justify-content: space-between;
     align-items: center;
     background: rgba(50, 3, 104, 0.8);
     width: 100%;
@@ -303,12 +303,44 @@ html {
     left: 0rem;
     font-size: 1.5rem;
   }
+  .servContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .adheridos {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0.5rem;
+    padding: 1.2rem;
+    align-items: center;
+    justify-content: space-between;
+  }
   .registroServicio {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1.2rem;
+    width: 20%;
+  }
+  .nuevoServicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--blanco);
+    box-shadow: 2px 2px 2px 1px black;
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--bordo);
+    width: 22%;
+    height: auto;
+    padding: 0.3rem;
+    font-size: 1rem;
   }
   #opcionesServicio {
     width: 100%;
@@ -333,6 +365,48 @@ html {
     border: none;
     border-radius: 0.5rem;
     box-shadow: 2px 2px 2px 1px black;
+  }
+  .btnServicio {
+    width: 6rem;
+    height: 2.5rem;
+    background: rgba(250, 250, 250, 0.8);
+    color: rgba(50, 3, 104, 0.8);
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px 1px black;
+    padding: 0.5rem;
+  }
+  .btnServicio:hover {
+    color: rgba(250, 250, 250, 0.8);
+    background: rgb(255, 119, 0.6);
+    box-shadow: 0.8px 0.8px 0.8px 0.8px black;
+  }
+  .btnServicioA {
+    width: 90%;
+    height: 1.5rem;
+    background: rgb(255, 119, 0.6);
+    color: rgba(250, 250, 250, 0.8);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px 1px black;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btnServicioA:hover {
+    color: rgba(250, 250, 250, 0.8);
+    background: rgb(255, 119, 0.6);
+    box-shadow: 0.8px 0.8px 0.8px 0.8px black;
+  }
+  .off {
+    display: none;
   }
   .show {
     display: flex;
