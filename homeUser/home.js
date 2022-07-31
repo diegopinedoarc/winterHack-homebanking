@@ -18,7 +18,10 @@ const addServSection = document.querySelector("#addServ");
 const sacarServSection = document.querySelector("#sacarServ");
 const pagarServSection = document.querySelector("#pagarServ");
 const comprobanteServSection = document.querySelector("#comprobantesServ");
-
+const servContainer = document.querySelector("servContainer");
+const addNuevoServicio = document.querySelector("#addNuevoServ");
+const montoServicio = document.querySelector("#montoServicio");
+const opcionesServicio = document.querySelector("#opcionesServicio");
 //transferencias
 const transferenciasBTN = document.querySelector("#transferenciasBTN");
 const sectionTransferencias = document.getElementById("transferencias");

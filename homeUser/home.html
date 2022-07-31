@@ -74,7 +74,30 @@
           <button class="btnsServicios" id="comprobantesBTN">Mis comprobantes</button>
         </div>
         </div>
-        <div id="addServ" class="servicioOculto"></div>
+        <div id="addServ" class="servicioOculto">
+          <div class="registroServicio">
+            <select name="" id="opcionesServicio">
+              <option value="" selected="selected">- Selecciona -</option>
+              <option value="Electricidad">Electricidad</option>
+              <option value="Gas">Gas</option>
+              <option value="Internet">Internet</option>
+              <option value="Agua">Agua</option>
+            </select>
+            <input type="text" placeholder="Monto a abonar" id="montoServicio">
+            <input type="date" name="" id="fechaFinServicio" placeholder="Vencimiento">
+            <button class="btnsLanding" id="addNuevoServ">Adherir servicio</button>
+          </div>
+           <div class="servContainer">
+            <div class="nuevoServicio">
+              <h3>Servicio</h3>
+              <h2>$Costo</h2>
+              <p>Deadline</p>
+              <h4>Al dia</h4>
+              <button>Pagar</button>
+
+            </div>
+           </div>
+        </div>
         <div id="sacarServ" class="servicioOculto"></div>
         <div id="pagarServ" class="servicioOculto"></div>
         <div id="comprobantesServ" class="servicioOculto"></div>
