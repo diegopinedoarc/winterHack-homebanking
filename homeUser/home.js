@@ -22,6 +22,7 @@ const servContainer = document.querySelector("servContainer");
 const addNuevoServicio = document.querySelector("#addNuevoServ");
 const montoServicio = document.querySelector("#montoServicio");
 const opcionesServicio = document.querySelector("#opcionesServicio");
+const fechaServicio = document.querySelector("#fechaFinServicio");
 //transferencias
 const transferenciasBTN = document.querySelector("#transferenciasBTN");
 const sectionTransferencias = document.getElementById("transferencias");
@@ -64,7 +65,7 @@ function descargarDatos() {
 
   pintarDatos();
 }
-//Funcion parap intar los datos del usuario
+//Funcion para pintar los datos del usuario
 function pintarDatos() {
   const h2 = document.createElement("h2");
   const h3 = document.createElement("h3");
@@ -194,4 +195,14 @@ comprobantesBTN.addEventListener("click", (e) => {
   sacarServSection.classList.remove("show");
   addServSection.classList.remove("show");
   pagarServSection.classList.remove("show");
+});
+
+addNuevoServicio.addEventListener("click", (e) => {
+  e.preventDefault();
+  const h5 = document.createElement("h5");
+  const h2 = document.createElement("h2");
+  const p = document.createElement("p");
+  h5.innerHTML = opcionesServicio.value;
+  h4.innerHTML = montoServicio.value;
+  p.innerHTML = fechaServicio.value;
 });
