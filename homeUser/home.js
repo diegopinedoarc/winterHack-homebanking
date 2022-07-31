@@ -34,6 +34,8 @@ const transferirBTN = document.querySelector("#transferir");
 //Arrays con datos de usuarios
 let baseDeDatos = [];
 let usuarioLogueado = [];
+let serviciosGuardados = [];
+let servicios = [];
 //Traigo la cookie del login y la guardo en una variable
 let user = getCookie(`usuario`);
 function getCookie(cname) {
@@ -199,7 +201,6 @@ comprobantesBTN.addEventListener("click", (e) => {
 });
 
 addNuevoServicio.addEventListener("click", (e) => {
-  debugger;
   e.preventDefault();
   const div = document.createElement("div");
   const h5 = document.createElement("h5");
@@ -214,6 +215,16 @@ addNuevoServicio.addEventListener("click", (e) => {
   div.classList.add("nuevoServicio");
   div.appendChild(h5);
   div.appendChild(h2);
+  div.appendChild(p);
   div.appendChild(btn);
   btn.classList.add("btnServicioA");
+  let boleta = {
+    servicio: opcionesServicio.options[opcionesServicio.selectedIndex].value,
+    monto: montoServicio.value,
+    fecha: fechaServicio.value,
+    id: Date.now(),
+    user: usuarioLogueado.email,
+  };
+  servicios.push(boleta);
+  console.log(servicios);
 });
