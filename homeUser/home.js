@@ -18,11 +18,12 @@ const addServSection = document.querySelector("#addServ");
 const sacarServSection = document.querySelector("#sacarServ");
 const pagarServSection = document.querySelector("#pagarServ");
 const comprobanteServSection = document.querySelector("#comprobantesServ");
-const servContainer = document.querySelector("servContainer");
+const servContainer = document.querySelector(".servContainer");
 const addNuevoServicio = document.querySelector("#addNuevoServ");
 const montoServicio = document.querySelector("#montoServicio");
 const opcionesServicio = document.querySelector("#opcionesServicio");
 const fechaServicio = document.querySelector("#fechaFinServicio");
+const adheridos = document.querySelector(".adheridos");
 //transferencias
 const transferenciasBTN = document.querySelector("#transferenciasBTN");
 const sectionTransferencias = document.getElementById("transferencias");
@@ -198,11 +199,21 @@ comprobantesBTN.addEventListener("click", (e) => {
 });
 
 addNuevoServicio.addEventListener("click", (e) => {
+  debugger;
   e.preventDefault();
+  const div = document.createElement("div");
   const h5 = document.createElement("h5");
   const h2 = document.createElement("h2");
   const p = document.createElement("p");
-  h5.innerHTML = opcionesServicio.value;
-  h4.innerHTML = montoServicio.value;
+  const btn = document.createElement("button");
+  btn.innerHTML = "Pagar";
+  h5.innerHTML = opcionesServicio.options[opcionesServicio.selectedIndex].value;
+  h2.innerHTML = montoServicio.value;
   p.innerHTML = fechaServicio.value;
+  adheridos.appendChild(div);
+  div.classList.add("nuevoServicio");
+  div.appendChild(h5);
+  div.appendChild(h2);
+  div.appendChild(btn);
+  btn.classList.add("btnServicioA");
 });
