@@ -24,8 +24,7 @@ const montoServicio = document.querySelector("#montoServicio");
 const opcionesServicio = document.querySelector("#opcionesServicio");
 const fechaServicio = document.querySelector("#fechaFinServicio");
 const adheridos = document.querySelector(".adheridos");
-const payBTN = document.querySelectorAll(".btnServicioA");
-console.log(payBTN);
+
 //transferencias
 const transferenciasBTN = document.querySelector("#transferenciasBTN");
 const sectionTransferencias = document.getElementById("transferencias");
@@ -255,9 +254,11 @@ function deleteServicio(e) {
     localStorage.setItem(`serviciosAdd`, JSON.stringify(serviciosGuardados));
   }
 }
-// payBTN.forEach((item) => {
-//   debugger;
-//   item.addEventListener("click", () => {
-//     alert("hola");
-//   });
-// });
+const payBTN = document.querySelectorAll(".btnServicioA");
+console.log(payBTN);
+payBTN.forEach((item) => {
+  debugger;
+  item.addEventListener("click", () => {
+    alert("Aca tendria que pagar ");
+  });
+});
