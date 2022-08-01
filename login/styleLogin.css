@@ -117,8 +117,8 @@ html {
     box-shadow: 0.8px 0.8px 0.8px 0.8px black;
   }
   .errores {
-    background: var(--naranjaClaro);
-    color: var(--blanco);
+    /* background: var(--naranjaClaro); */
+    color: var(--naranja);
     font-size: 1rem;
     border-radius: 0.5rem;
     padding: 0.5rem;
