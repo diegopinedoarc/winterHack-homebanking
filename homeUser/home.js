@@ -70,6 +70,7 @@ function descargarDatos() {
   pintarDatos();
   pintarServicios();
 }
+
 //Funcion para pintar los datos del usuario
 function pintarDatos() {
   const h2 = document.createElement("h2");
@@ -170,6 +171,7 @@ serviciosBTN.addEventListener("click", (e) => {
   sectionServicios.classList.toggle("show");
   sectionDepositos.classList.remove("show");
   sectionTransferencias.classList.remove("show");
+  adheridos.addEventListener("click", deleteServicio);
 });
 
 AdherirBTN.addEventListener("click", (e) => {
@@ -231,9 +233,21 @@ function pintarServicios() {
       div.appendChild(h2);
       div.appendChild(p);
       div.appendChild(btn);
-      h5.innerHTML = `${serviciosGuardados[i].servicio}`;
+      h5.innerHTML = `${serviciosGuardados[i].servicio} <span data-id='${serviciosGuardados[i].id}'>X</span>`;
       h2.innerHTML = `${serviciosGuardados[i].monto}`;
       p.innerHTML = `${serviciosGuardados[i].fecha}`;
     }
+  }
+}
+
+function deleteServicio(e) {
+  debugger;
+  if (e.target.tagName === "SPAN") {
+    e.target.parentElement.parentElement.remove();
+    const deleteId = parseInt(e.target.getAttribute("data-id"));
+    serviciosGuardados = serviciosGuardados.filter(
+      (servicio) => servicio.id !== deleteId
+    );
+    localStorage.setItem(`serviciosAdd`, JSON.stringify(serviciosGuardados));
   }
 }
