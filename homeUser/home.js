@@ -259,6 +259,6 @@ console.log(payBTN);
 payBTN.forEach((item) => {
   debugger;
   item.addEventListener("click", () => {
-    alert("Aca tendria que pagar ");
+    alert("Aca tendria que pagar");
   });
 });
