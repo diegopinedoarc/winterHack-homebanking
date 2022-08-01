@@ -35,7 +35,6 @@ const transferirBTN = document.querySelector("#transferir");
 let baseDeDatos = [];
 let usuarioLogueado = [];
 let serviciosGuardados = [];
-let servicios = [];
 //Traigo la cookie del login y la guardo en una variable
 let user = getCookie(`usuario`);
 function getCookie(cname) {
@@ -58,6 +57,9 @@ function descargarDatos() {
   if (localStorage.getItem(user)) {
     usuarioLogueado = JSON.parse(localStorage.getItem(user));
   }
+  if (localStorage.getItem(`serviciosAdd`)) {
+    serviciosGuardados = JSON.parse(localStorage.getItem(`serviciosAdd`));
+  }
   for (let i in baseDeDatos) {
     if (baseDeDatos[i].email === usuarioLogueado.email) {
       let refrescar = baseDeDatos[i].saldo;
@@ -65,8 +67,8 @@ function descargarDatos() {
       localStorage.setItem(user, JSON.stringify(usuarioLogueado));
     }
   }
-
   pintarDatos();
+  pintarServicios();
 }
 //Funcion para pintar los datos del usuario
 function pintarDatos() {
@@ -100,7 +102,7 @@ function desloguear() {
 function eliminarCookie(cname) {
   return (document.cookie = cname + "=;expires=Thu, 01 Jan 1970 00:00:01 GMT;");
 }
-//Funciona que redirecciona al login
+//Funcion que redirecciona al login
 function alLogin() {
   location.assign("../login/login.html");
 }
@@ -202,22 +204,6 @@ comprobantesBTN.addEventListener("click", (e) => {
 
 addNuevoServicio.addEventListener("click", (e) => {
   e.preventDefault();
-  const div = document.createElement("div");
-  const h5 = document.createElement("h5");
-  const h2 = document.createElement("h2");
-  const p = document.createElement("p");
-  const btn = document.createElement("button");
-  btn.innerHTML = "Pagar";
-  h5.innerHTML = opcionesServicio.options[opcionesServicio.selectedIndex].value;
-  h2.innerHTML = montoServicio.value;
-  p.innerHTML = fechaServicio.value;
-  adheridos.appendChild(div);
-  div.classList.add("nuevoServicio");
-  div.appendChild(h5);
-  div.appendChild(h2);
-  div.appendChild(p);
-  div.appendChild(btn);
-  btn.classList.add("btnServicioA");
   let boleta = {
     servicio: opcionesServicio.options[opcionesServicio.selectedIndex].value,
     monto: montoServicio.value,
@@ -225,6 +211,29 @@ addNuevoServicio.addEventListener("click", (e) => {
     id: Date.now(),
     user: usuarioLogueado.email,
   };
-  servicios.push(boleta);
-  console.log(servicios);
+  serviciosGuardados.push(boleta);
+  localStorage.setItem(`serviciosAdd`, JSON.stringify(serviciosGuardados));
 });
+function pintarServicios() {
+  debugger;
+  for (let i in serviciosGuardados) {
+    if (serviciosGuardados[i].user === usuarioLogueado.email) {
+      const div = document.createElement("div");
+      const h5 = document.createElement("h5");
+      const h2 = document.createElement("h2");
+      const p = document.createElement("p");
+      const btn = document.createElement("button");
+      btn.innerHTML = "Pagar";
+      div.classList.add("nuevoServicio");
+      btn.classList.add("btnServicioA");
+      adheridos.appendChild(div);
+      div.appendChild(h5);
+      div.appendChild(h2);
+      div.appendChild(p);
+      div.appendChild(btn);
+      h5.innerHTML = `${serviciosGuardados[i].servicio}`;
+      h2.innerHTML = `${serviciosGuardados[i].monto}`;
+      p.innerHTML = `${serviciosGuardados[i].fecha}`;
+    }
+  }
+}
