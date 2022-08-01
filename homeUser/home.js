@@ -24,6 +24,8 @@ const montoServicio = document.querySelector("#montoServicio");
 const opcionesServicio = document.querySelector("#opcionesServicio");
 const fechaServicio = document.querySelector("#fechaFinServicio");
 const adheridos = document.querySelector(".adheridos");
+const payBTN = document.querySelectorAll(".btnServicioA");
+console.log(payBTN);
 //transferencias
 const transferenciasBTN = document.querySelector("#transferenciasBTN");
 const sectionTransferencias = document.getElementById("transferencias");
@@ -215,6 +217,9 @@ addNuevoServicio.addEventListener("click", (e) => {
   };
   serviciosGuardados.push(boleta);
   localStorage.setItem(`serviciosAdd`, JSON.stringify(serviciosGuardados));
+  opcionesServicio.options[opcionesServicio.selectedIndex].value = "";
+  montoServicio.value = "";
+  fechaServicio.value = "";
   location.reload();
 });
 function pintarServicios() {
@@ -234,14 +239,13 @@ function pintarServicios() {
       div.appendChild(p);
       div.appendChild(btn);
       h5.innerHTML = `${serviciosGuardados[i].servicio} <span data-id='${serviciosGuardados[i].id}'>X</span>`;
-      h2.innerHTML = `${serviciosGuardados[i].monto}`;
+      h2.innerHTML = `$ ${serviciosGuardados[i].monto}`;
       p.innerHTML = `${serviciosGuardados[i].fecha}`;
     }
   }
 }
 
 function deleteServicio(e) {
-  debugger;
   if (e.target.tagName === "SPAN") {
     e.target.parentElement.parentElement.remove();
     const deleteId = parseInt(e.target.getAttribute("data-id"));
@@ -251,3 +255,9 @@ function deleteServicio(e) {
     localStorage.setItem(`serviciosAdd`, JSON.stringify(serviciosGuardados));
   }
 }
+// payBTN.forEach((item) => {
+//   debugger;
+//   item.addEventListener("click", () => {
+//     alert("hola");
+//   });
+// });

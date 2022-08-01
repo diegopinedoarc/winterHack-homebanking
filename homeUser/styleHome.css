@@ -320,6 +320,13 @@ html {
     align-items: center;
     justify-content: space-between;
   }
+  .adheridos span {
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+    top: 0rem;
+    left: 1rem;
+  }
   .registroServicio {
     display: flex;
     flex-direction: column;
