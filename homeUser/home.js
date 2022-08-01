@@ -213,9 +213,9 @@ addNuevoServicio.addEventListener("click", (e) => {
   };
   serviciosGuardados.push(boleta);
   localStorage.setItem(`serviciosAdd`, JSON.stringify(serviciosGuardados));
+  location.reload();
 });
 function pintarServicios() {
-  debugger;
   for (let i in serviciosGuardados) {
     if (serviciosGuardados[i].user === usuarioLogueado.email) {
       const div = document.createElement("div");
