@@ -76,7 +76,7 @@ function descargarDatos() {
 function pintarDatos() {
   const h2 = document.createElement("h2");
   const h3 = document.createElement("h3");
-  const p = document.createElement("p");
+  const p = document.createElement("h3");
   h2.innerHTML = `¡Hola! ${usuarioLogueado.nombre} ${usuarioLogueado.apellido}`;
   h3.innerHTML = `Tu CBU es: ${usuarioLogueado.CBU}`;
   p.innerHTML = `Tu saldo en cuenta es: $${usuarioLogueado.saldo}`;
@@ -213,6 +213,7 @@ addNuevoServicio.addEventListener("click", (e) => {
     fecha: fechaServicio.value,
     id: Date.now(),
     user: usuarioLogueado.email,
+    idPago: datePlus(),
   };
   serviciosGuardados.push(boleta);
   localStorage.setItem(`serviciosAdd`, JSON.stringify(serviciosGuardados));
@@ -229,7 +230,8 @@ function pintarServicios() {
       const h2 = document.createElement("h2");
       const p = document.createElement("p");
       const btn = document.createElement("button");
-      btn.innerHTML = "Pagar";
+      btn.innerHTML = `Pagar`;
+      btn.setAttribute("data-id", `${serviciosGuardados[i].idPago}`);
       div.classList.add("nuevoServicio");
       btn.classList.add("btnServicioA");
       adheridos.appendChild(div);
@@ -254,11 +256,34 @@ function deleteServicio(e) {
     localStorage.setItem(`serviciosAdd`, JSON.stringify(serviciosGuardados));
   }
 }
+// const payBTN = document.querySelectorAll(".btnServicioA");
+// console.log(payBTN);
+// payBTN.forEach((item) => {
+//   item.addEventListener("click", () => {
+//     alert("Aca tendria que pagar");
+//   });
+// });
 const payBTN = document.querySelectorAll(".btnServicioA");
-console.log(payBTN);
 payBTN.forEach((item) => {
   debugger;
-  item.addEventListener("click", () => {
-    alert("Aca tendria que pagar");
+  item.addEventListener("click", (e) => {
+    debugger;
+    for (let i in serviciosGuardados) {
+      debugger;
+      if (serviciosGuardados[i].user === usuarioLogueado.email) {
+        if (e.target.tagName === "button") {
+          const IdServicio = parseInt(e.target.getAttribute("data-id"));
+          if (IdServicio === serviciosGuardados[i].idPago) {
+            usuarioLogueado.saldo -= serviciosGuardados[i].monto;
+          }
+        }
+      }
+    }
   });
 });
+
+function datePlus() {
+  let number = Date.now();
+  let idrandom = number + 1;
+  return idrandom;
+}
